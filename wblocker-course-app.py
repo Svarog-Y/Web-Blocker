@@ -4,11 +4,11 @@ from datetime import datetime as dt
 #definitions
 hosts_file = r"C:\Windows\System32\drivers\etc\hosts"
 ip_example = "127.0.0.1"
-sites_list = ["www.facebook.com", "www.youtube.com", "www.9gag.com", "www.reddit.com"]
+sites_list = ["www.facebook.com", "facebook.com", "youtube.com", "youtube.rs", \
+"www.youtube.com", "www.9gag.com", "www.reddit.com", "9gag.com", "reddit.com"]
 
 while True:
     if dt(dt.now().year, dt.now().month, dt.now().day, 8) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 18):
-        print("Within time...")
         with open(hosts_file, "r+") as file:
             content = file.read()
             for website in sites_list:
