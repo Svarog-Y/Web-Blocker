@@ -14,4 +14,4 @@ def main():
 
 if __name__ == '__main__':
     ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)
-    app.run(use_reloader=False, debug=True, host="0.0.0.0", port=80)
+    app.run(use_reloader=False, debug=True, host="0.0.0.0", port=443)
