@@ -60,7 +60,7 @@ def block_sites():
         content_new = file.read()
         
         if not content_new == content_old:
-            notify("Fun sites are locked. Grind time motherfucker!")
+            notify("Fun sites are locked. Grind time!")
 
 while True:
     if work_time(): 
