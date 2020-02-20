@@ -1,3 +1,4 @@
+import ctypes
 import os
 from flask import Flask, render_template
 
@@ -12,4 +13,5 @@ def main():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=80)
+    ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)
+    app.run(use_reloader=False, debug=True, host="0.0.0.0", port=80)
