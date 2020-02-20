@@ -9,10 +9,11 @@ def localhost():
     name = multiprocessing.current_process().name
     print(name, ' Starting')
 
-    app = Flask(__name__)
+    templates_dir = r"C:\Users\Stefan\Documents\GitHub\Web-Blocker\templates"
+    app = Flask(__name__, template_folder=templates_dir)
 
     @app.route("/")
-    def home():
+    def main():
         return render_template('index.html')
 
     if __name__ == '__mp_main__':
