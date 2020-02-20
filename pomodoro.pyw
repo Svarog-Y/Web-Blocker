@@ -9,8 +9,13 @@ def localhost():
     name = multiprocessing.current_process().name
     print(name, ' Starting')
 
-    templates_dir = r"C:\Users\Stefan\Documents\GitHub\Web-Blocker\templates"
-    app = Flask(__name__, template_folder=templates_dir)
+    APP_PATH = os.path.dirname(os.path.abspath(__file__))
+    TEMPLATE_DIR = os.path.join(APP_PATH, 'templates')
+    STATIC_DIR = os.path.join(APP_PATH, 'static')
+    print(TEMPLATE_DIR)
+    print(STATIC_DIR)
+
+    app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 
     @app.route("/")
     def main():
