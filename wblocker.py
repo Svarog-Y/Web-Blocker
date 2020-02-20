@@ -1,9 +1,12 @@
+import ctypes
 import sys
 import os
 import multiprocessing
 import time
 from datetime import datetime as dt
 from win10toast import ToastNotifier
+
+ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)
 
 os.system('ipconfig/flushdns') #flush DNS
 
@@ -21,7 +24,7 @@ def hour(h):
     else: return dt(dt.now().year, dt.now().month, dt.now().day, 24)
 
 def work_time():
-    if hour(8) < dt.now() < hour(20): 
+    if hour(0) < dt.now() < hour(20): 
         return True
     else:
         return False 
