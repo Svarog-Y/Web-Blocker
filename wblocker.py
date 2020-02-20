@@ -7,8 +7,10 @@ ip_example = "127.0.0.1"
 sites_list = ["www.facebook.com", "facebook.com", "youtube.com", "youtube.rs", \
 "www.youtube.com", "www.9gag.com", "www.reddit.com", "9gag.com", "reddit.com"]
 
+n = 0
 while True:
-    if dt(dt.now().year, dt.now().month, dt.now().day, 8) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 22):
+    n = n + 1
+    if dt(dt.now().year, dt.now().month, dt.now().day, 12) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 21):
         with open(hosts_file, "r+") as file:
             content = file.read()
             for website in sites_list:
@@ -24,4 +26,6 @@ while True:
                 if not any(website in line for website in sites_list):
                     file.write(line)
             file.truncate()
+    if n < 5: print("Re-checking hosts...")
     time.sleep(2.5)
+
