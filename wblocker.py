@@ -24,7 +24,7 @@ def hour(h):
     else: return dt(dt.now().year, dt.now().month, dt.now().day, 24)
 
 def work_time():
-    if hour(0) < dt.now() < hour(20): 
+    if hour(8) < dt.now() < hour(20): 
         return True
     else:
         return False 
